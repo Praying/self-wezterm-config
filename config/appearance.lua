@@ -1,6 +1,7 @@
 local wezterm = require('wezterm')
 local gpu_adapters = require('utils.gpu_adapter')
-local colors = require('colors.custom')
+--local colors = require('colors.custom')
+local colors = wezterm.color.get_builtin_schemes()['Catppuccin Frappe']
 
 return {
    animation_fps = 60,
@@ -11,11 +12,13 @@ return {
 
    -- color scheme
    colors = colors,
+   color_scheme = 'Catppuccin Frappe',
 
    -- background
    background = {
       {
          source = { File = wezterm.GLOBAL.background },
+         --source = { File = colors.background },
       },
       {
          source = { Color = colors.background },
